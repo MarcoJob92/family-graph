@@ -35,9 +35,9 @@ public class CsvPeopleReader {
 	private static void readPeople() throws IOException, CsvException {
 		reader = new CSVReader(new FileReader(CsvPaths.PATH_TO_CSV_PEOPLE));
 		Map<String, Person> people = reader.readAll()
-										   .stream()
-										   .map(Person::new)
-					                	   .collect(Collectors.toMap(Person::getEmail, Function.identity()));
+						   .stream()
+						   .map(Person::new)
+					           .collect(Collectors.toMap(Person::getEmail, Function.identity()));
 		People.setMap(people);
 	}
 	
