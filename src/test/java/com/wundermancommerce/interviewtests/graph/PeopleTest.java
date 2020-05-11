@@ -15,7 +15,7 @@ import java.util.HashMap;
 
 public class PeopleTest {
 	
-	CSVReader reader;
+    CSVReader reader;
 	
     @Test
     public void testPeopleMapIsCorrectlyPopulated() throws IOException, CsvException {
@@ -23,13 +23,13 @@ public class PeopleTest {
     	
     	reader = new CSVReader(new FileReader(CsvPaths.PATH_TO_CSV_PEOPLE));
     	
-		int size = reader.readAll().size();
-		assertEquals(size, People.size());
+	int size = reader.readAll().size();
+	assertEquals(size, People.size());
     }
     
     @Test
     public void testPeopleRelationships() throws IOException, CsvException {
-    	HashMap<String, Integer> numberOfRelationsByUser = new HashMap<String, Integer>();
+    	Map<String, Integer> numberOfRelationsByUser = new HashMap<String, Integer>();
     	numberOfRelationsByUser.put("bob@bob.com", 4);
     	numberOfRelationsByUser.put("jenny@toys.com", 3);
     	numberOfRelationsByUser.put("nigel@marketing.com", 2);
